@@ -2,6 +2,43 @@
 # base case if n=0 or 1, then it returns 1
 # fib(n-1) + fib(n-2)
 
+store = {}
+
+def fib_amortization2(n):
+    # base case
+    if n == 0 or n == 1:
+        return n
+
+    # check cache
+    if n in store:
+        return store[n]
+
+
+    #keep setting cache
+    store[n] = fib_amortization2(n-1) + fib_amortization2(n-2)
+
+    return store[n]
+
+
+n = 10
+cache = [None] * (n + 1)
+
+
+def fib_amortization(n):
+    # base case
+    if n == 0 or n == 1:
+        return n
+
+    # check cache
+    if cache[n] != None:
+        return cache[n]
+
+
+    #keep setting cache
+    cache[n] = fib_amortization(n-1) + fib_amortization(n-2)
+
+    return cache[n]
+
 
 
 def fib_recursive(n):
@@ -26,3 +63,5 @@ def fib_iterative(n):
 
 print(fib_iterative(5))
 print(fib_recursive(3))
+print(fib_amortization(10))
+print(fib_amortization2(12))
