@@ -31,15 +31,17 @@ def pair_sum2(arr, k):
 
         target = k - num
 
-        if target not in seen:
+        print(num)
+
+        if target not in seen and target != num:
             seen.add(num)
         
         else:
-            print(   output.add( (  min(num, target) , max(num,target) ) )   )
+            output.add( (  min(num, target) , max(num,target) ) )
 
     #return len(output)
-    print(seen)
+
     return '\n'.join(map(str, list(output)))
 
 
-print(pair_sum2([1,3,2,2], 4))
+print(pair_sum2([1,2,3,4], 4))

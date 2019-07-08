@@ -14,7 +14,7 @@ def reverse(node):
     previous = None
     next = node.nextnode
 
-    while next.nextnode is not None:
+    while next is not None:
         current.nextnode = previous
 
         previous = current

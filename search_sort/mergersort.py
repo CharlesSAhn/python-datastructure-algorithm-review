@@ -7,7 +7,7 @@ def merge_sort(arr):
 
 	if len(arr) > 1:
 
-		mid = int(len(arr)/2)
+		mid = len(arr)//2
 
 		lefthalf = arr[:mid]
 		righthalf = arr[mid:]
@@ -20,7 +20,7 @@ def merge_sort(arr):
 		k = 0
 
 		while i < len(lefthalf) and j < len(righthalf):
-			if lefthalf[i] < righthalf[i]:
+			if lefthalf[i] < righthalf[j]:
 				arr[k] = lefthalf[i]
 
 				i += 1
@@ -44,7 +44,7 @@ def merge_sort(arr):
 
 
 
-arr = [11,2,5,4,7,56,2,12,23]
+arr = [11,2,5,4,77,56,2,245,23]
 
 merge_sort(arr)
 print(arr)

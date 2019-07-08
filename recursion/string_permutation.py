@@ -15,7 +15,7 @@ def permuation(s):
         for i, let in enumerate(s):
             # for every permutation resulting from step 2 and 3
 
-            for perm in permuation(s[:1] + s[i+1:]):
+            for perm in permuation(s[:i] + s[i+1:]):
                 out += [let+perm]
 
     return out
